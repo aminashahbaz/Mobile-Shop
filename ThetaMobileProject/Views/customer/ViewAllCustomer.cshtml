@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ThetaMobileProject.Models.Customer>
+
+@{
+    ViewData["Title"] = "ViewAllCustomer";
+}
+
+<h2>ViewAllCustomer</h2>
+
+<p>
+    <a asp-action="AddNewCustomer">Create New</a>
+</p>
+<table class="table" id="dtable">
+    <thead>
+        <tr>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.CustomerId)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cnic)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tdate)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cnic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tdate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditCustomer", new { CustomerId = item.CustomerId }) |
+                @Html.ActionLink("Details", "CustomerDetail", new { CustomerId = item.CustomerId }) |
+                @Html.ActionLink("Delete", "DeleteCustomer", new { CustomerId = item.CustomerId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts
+    {
+    <script type="text/javascript">
+function add_chatinline(){var hccid=97452151;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
+}

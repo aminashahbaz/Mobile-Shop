@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ThetaMobileProject.Models.User>
+@{
+    ViewData["Title"] = "ViewAllUser";
+   
+
+}
+<h2>ViewAllUser</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="ttable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tdate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditUser", new { UserId = item.UserId }) |
+                    @Html.ActionLink("Details", "UserDetail", new { UserId = item.UserId }) |
+                    @Html.ActionLink("Delete", "DeleteUser", new { UserId = item.UserId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts
+    {
+    <script type="text/javascript">
+function add_chatinline(){var hccid=97452151;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
+}

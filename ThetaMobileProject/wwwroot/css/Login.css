@@ -1,0 +1,15 @@
+﻿body {
+    background: url("../images/ab.jpeg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto Slab', serif;
+    color:white;
+}
+
+.container {
+    width: 50%;
+    margin-top: 20px;
+}
+h2{
+    text-align:center;
+}

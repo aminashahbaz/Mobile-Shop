@@ -1,0 +1,41 @@
+﻿@model ThetaMobileProject.Models.ItemCatagory
+
+@{
+    ViewData["Title"] = "ItemCatagoryDetail";
+}
+
+<h2>ItemCatagoryDetail</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CatagoryCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CatagoryCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CatagoryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CatagoryName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tdate)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="ViewAllItemCatagory">Back to List</a>
+</div>
+@section scripts{ 
+<script type="text/javascript">
+function add_chatinline(){var hccid=97452151;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
+}

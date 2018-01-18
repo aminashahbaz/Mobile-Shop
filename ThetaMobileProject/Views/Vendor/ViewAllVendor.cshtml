@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ThetaMobileProject.Models.Vendor>
+
+@{
+    ViewData["Title"] = "ViewAllVendor";
+}
+
+<h2>ViewAllVendor</h2>
+
+<p>
+    <a asp-action="AddNewVendor">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.VendorCode)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.VendorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cnic)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tdate)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cnic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tdate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditVendor", new { VendorCode = item.VendorCode }) |
+                @Html.ActionLink("Details", "VendorDetail", new { VendorCode = item.VendorCode }) |
+                @Html.ActionLink("Delete", "DeleteVendor", new { VendorCode = item.VendorCode })
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts {
+ 
+
+    <script type="text/javascript">
+function add_chatinline(){var hccid=97452151;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
+}

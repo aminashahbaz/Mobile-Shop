@@ -1,0 +1,113 @@
+﻿@model IEnumerable<ThetaMobileProject.Models.ItemCatagory>
+@{
+    ViewData["Title"] = "ViewAllItemCatagory";
+}
+<h2>ViewAllItemCatagory</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.CatagoryCode)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CatagoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CatagoryCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CatagoryName)<span class="CCount badge pull-right" data-id="@item.CatagoryCode">0</span>
+                </td>
+                <td class="pull-right">
+                    @Html.ActionLink("", "ItemCatagoryDetail", new { CatagoryCode = item.CatagoryCode }, new { @class = "btn-lg btn-success glyphicon glyphicon-info-sign", @title = "Detail" })
+
+                    @Html.ActionLink("", "EditItemCatagory", new { CatagoryCode = item.CatagoryCode }, new { @class = "btn-lg btn-warning glyphicon glyphicon-edit", @title = "Edit" })
+
+                    @Html.ActionLink("", "DeleteItemCatagory", new { CatagoryCode = item.CatagoryCode }, new { @class = "btn-lg btn-danger glyphicon glyphicon-trash", @title = "Delete" })
+
+
+
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div id="disqus_thread"></div>
+@section Scripts
+    {
+
+<script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://abvc.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <script>
+        $(document).ready(function () {
+            $('#dtable').DataTable();
+
+            $('.CCount').each(function () {
+                //test
+                var sp = $(this);
+
+                $.ajax({
+                    before: function () { },
+
+                    url: '/ItemCatagory/CatagoryCountAjax',
+                    type: 'GET',
+                    data: {
+                        CatagoryCode: sp.data('id')
+
+                    },
+                    success: function (result) {
+
+                        sp.text(result);
+
+                    },
+                    error: function () { },
+                    after: function () { }
+                });
+
+            });
+        });
+
+
+
+        type = "text/javascript" > function add_chatinline() { var hccid = 97452151; var nt = document.createElement("script"); nt.async = true; nt.src = "https://mylivechat.com/chatinline.aspx?hccid=" + hccid; var ct = document.getElementsByTagName("script")[0]; ct.parentNode.insertBefore(nt, ct); }
+        add_chatinline();
+
+    </script>
+}
+
+
+

@@ -1,0 +1,16 @@
+﻿body {
+    font-family: 'Roboto Slab', serif;
+}
+
+img {
+    width: 100%;
+}
+
+#user {
+    width: 150px;
+    height: 150px;
+}
+
+    #user p {
+        padding-top: 25%;
+    }

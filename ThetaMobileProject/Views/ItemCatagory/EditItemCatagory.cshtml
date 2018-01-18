@@ -1,0 +1,46 @@
+﻿@model ThetaMobileProject.Models.ItemCatagory
+
+@{
+    ViewData["Title"] = "EditItemCatagory";
+}
+
+<h2>EditItemCatagory</h2>
+
+<h4>ItemCatagory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditItemCatagory">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="CatagoryCode" class="control-label"></label>
+                <input asp-for="CatagoryCode" class="form-control" />
+                <span asp-validation-for="CatagoryCode" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="CatagoryName" class="control-label"></label>
+                <input asp-for="CatagoryName" class="form-control" />
+                <span asp-validation-for="CatagoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tdate" class="control-label"></label>
+                <input asp-for="Tdate" class="form-control" />
+                <span asp-validation-for="Tdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ViewAllItemCatagory">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script type="text/javascript">
+function add_chatinline(){var hccid=97452151;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
+}
